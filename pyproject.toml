@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "diceware"
+name = "simple-diceware"
 version = "0.1.0"
 description = "Create diceware passwords from the command line"
 authors = ["Ben Chopson <bchopson@users.noreply.github.com>"]
 license = "MIT"
 
 [tool.poetry.scripts]
-diceware = 'diceware:main'
+diceware = 'simple_diceware:main'
 
 [tool.poetry.dependencies]
 python = "^3.6"
