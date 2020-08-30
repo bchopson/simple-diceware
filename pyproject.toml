@@ -1,7 +1,10 @@
 [tool.poetry]
 name = "simple-diceware"
-version = "0.4.0"
+version = "0.4.1"
 description = "Create diceware passwords from the command line"
+readme = "README.md"
+repository = "https://github.com/bchopson/simple-diceware"
+homepage = "https://github.com/bchopson/simple-diceware"
 authors = ["Ben Chopson <bchopson@users.noreply.github.com>"]
 license = "MIT"
 
