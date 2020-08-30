@@ -1,14 +1,15 @@
 import argparse
+import pkgutil
 from secrets import randbelow
 from typing import Dict, List
 
 
 def get_list() -> Dict[str, str]:
-    with open('diceware.wordlist.asc') as f:
-        return {
-            number: phrase
-            for [number, phrase] in [line.strip().split('\t') for line in f.readlines()]
-        }
+    wordlist = pkgutil.get_data(__name__, 'diceware.wordlist.asc').decode('utf-8')
+    return {
+        number: phrase
+        for [number, phrase] in [line.strip().split('\t') for line in wordlist.strip().split('\n')]
+    }
 
 
 def get_phrase(diceware_list: Dict[str, str]) -> str:
