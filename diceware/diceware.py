@@ -1,3 +1,4 @@
+import argparse
 from secrets import randbelow
 from typing import Dict, List
 
@@ -17,8 +18,19 @@ def get_phrase(diceware_list: Dict[str, str]) -> str:
     return diceware_list[key]
 
 
-def generate_password(length: int) -> List[str]:
-    if i < 1:
+def generate_password(length: int) -> str:
+    if length < 1:
         raise ValueError('Password must be at least one phrase')
     diceware_list = get_list()
     return ' '.join([get_phrase(diceware_list) for i in range(length)])
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('length', nargs=1, type=int)
+    parsed = parser.parse_args()
+    print(generate_password(parsed.length[0]))
+
+
+if __name__ == '__main__':
+    main()
